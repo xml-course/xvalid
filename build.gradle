@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'io.github.plamentotev'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+// Storing the dependencies on the file system (and the source code repository)
+// is not a good idea but I didn't managed to find those artifacts
+// in a public Maven repository that is still maintained.
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    runtimeOnly name: 'xercesImpl'
+    runtimeOnly name: 'cupv10k-runtime'
+    runtimeOnly name: 'org.eclipse.wst.xml.xpath2.processor_1.2.0'
+    runtimeOnly name: 'icu4j'
+    runtimeOnly name: 'resolver'
+    runtimeOnly name: 'serializer'
+    runtimeOnly name: 'xml-apis'
+}
+
+mainClassName = 'io.github.plamentotev.xvalid.App'

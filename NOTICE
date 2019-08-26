@@ -1,0 +1,3 @@
+This software uses Apache Xerces2 (http://xerces.apache.org/xerces2-j/).
+The Xerces2 implementation, its dependencies and their licenses and notices
+are located under the /lib directory.
