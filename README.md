@@ -16,11 +16,11 @@ xValid requires Java version 11 or newer installed.
 
 Windows:
 
-    bin\xvalid.bat schema.xsd document.xml
+    .\bin\xvalid.bat schema.xsd document.xml
     
 macOS, Linux and other Unix like systems:
 
-    bin/xvalid schema.xsd document.xml
+    ./bin/xvalid schema.xsd document.xml
 
 ## Third Party Libraries
 
