@@ -3,6 +3,11 @@
 xValid (short from XML Validator) is a simple CLI utility for validating
 XML documents against XML Schema 1.1.
 
+**Note:** xValid is just convenient  CLI wrapper around
+[Xerces2](http://xerces.apache.org/xerces2-j/).
+For production use it is recommended to use
+[Xerces2](http://xerces.apache.org/xerces2-j/) directly.
+
 ## Installation 
 
 Download and unpack the [latest release][latest release].
