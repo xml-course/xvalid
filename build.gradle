@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'com.google.cloud.tools.jib' version '1.7.0'
 }
 
 group 'io.github.plamentotev'
@@ -27,3 +28,13 @@ dependencies {
 }
 
 mainClassName = 'io.github.plamentotev.xvalid.App'
+
+jib {
+    to {
+        image = 'docker.pkg.github.com/plamentotev/xvalid/xvalid'
+        auth {
+            username = "${githubUsername}"
+            password = "${githubToken}"
+        }
+    }
+}
