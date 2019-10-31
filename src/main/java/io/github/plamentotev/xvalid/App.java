@@ -9,17 +9,30 @@ import java.io.IOException;
 
 public class App {
 
-    public static void main(String[] args) throws IOException, SAXException {
+    public static void main(String[] args) {
         if (args.length != 2) {
             printUsage();
 
             return;
         }
 
+        var schemaFilePath = args[0];
+        var documentFilePath = args[1];
+        try {
+            doValidate(schemaFilePath, documentFilePath);
+        } catch(Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    private static void doValidate(String schemaFilePath,
+                                   String documentFilePath)
+        throws SAXException, IOException
+    {
         // Initialize the schema that is going to be used
         // to validate the XML document
 
-        var schemaFile = new File(args[0]);
+        var schemaFile = new File(schemaFilePath);
         var schemaFileName = schemaFile.getName();
         var schemaErrorHandler = new ReportingErrorHandler(System.err,
             schemaFileName);
@@ -38,7 +51,7 @@ public class App {
 
         // Validate the XML document
 
-        var documentFile = new File(args[1]);
+        var documentFile = new File(documentFilePath);
         var documentFileName = documentFile.getName();
         var documentErrorHandler = new ReportingErrorHandler(System.err,
                 documentFileName);
