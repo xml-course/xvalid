@@ -19,6 +19,10 @@ dependencies {
 
 mainClassName = 'io.github.plamentotev.xvalid.App'
 
+application {
+    applicationDefaultJvmArgs = ['-Xverify:none', '-XX:TieredStopAtLevel=1']
+}
+
 jib {
     to {
         image = 'docker.pkg.github.com/plamentotev/xvalid/xvalid'
