@@ -51,7 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/distribution/xvalid.tar
+          asset_path: ./build/distributions/xvalid.tar
           asset_name: xvalid-${{ steps.get_version.outputs.result }}.tar
           asset_content_type: application/tar
       - name: Upload the ZIP archive
@@ -60,7 +60,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/distribution/xvalid.zip
+          asset_path: ./build/distributions/xvalid.zip
           asset_name: xvalid-${{ steps.get_version.outputs.result }}.zip
           asset_content_type: application/zip
 
