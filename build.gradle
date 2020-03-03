@@ -29,7 +29,7 @@ application {
 
 jib {
     to {
-        image = 'docker.pkg.github.com/plamentotev/xvalid/xvalid'
+        image = 'xvalid'
     }
 
     container {
