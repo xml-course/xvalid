@@ -19,8 +19,12 @@ dependencies {
 
 mainClassName = 'io.github.plamentotev.xvalid.App'
 
+// The default arguments to pass to the JVM.
+// Used both for the start scripts and for the Docker image
+def jvmArgs = ['-Xverify:none', '-XX:TieredStopAtLevel=1']
+
 application {
-    applicationDefaultJvmArgs = ['-Xverify:none', '-XX:TieredStopAtLevel=1']
+    applicationDefaultJvmArgs = jvmArgs
 }
 
 jib {
@@ -30,5 +34,9 @@ jib {
             username = "${githubUsername}"
             password = "${githubToken}"
         }
+    }
+
+    container {
+        jvmFlags = jvmArgs
     }
 }
