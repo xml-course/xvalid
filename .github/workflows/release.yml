@@ -64,18 +64,3 @@ jobs:
           asset_path: ./build/distributions/xvalid.zip
           asset_name: xvalid-${{ steps.get_version.outputs.result }}.zip
           asset_content_type: application/zip
-
-      - name: Build Docker image
-        run: ./gradlew --no-daemon --console=plain jibDockerBuild
-      - name: Log into Docker registry
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: echo "$GITHUB_TOKEN" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
-      - name: Tag and push Docker image
-        env:
-          VERSION: ${{ steps.get_version.outputs.result }}
-        run: |
-          docker tag xvalid:latest docker.pkg.github.com/plamentotev/xvalid/xvalid:$VERSION
-          docker tag xvalid:latest docker.pkg.github.com/plamentotev/xvalid/xvalid:latest
-          docker push docker.pkg.github.com/plamentotev/xvalid/xvalid:$VERSION
-          docker push docker.pkg.github.com/plamentotev/xvalid/xvalid:latest
