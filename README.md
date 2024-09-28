@@ -12,7 +12,7 @@ For production use it is recommended to use
 
 Download and unpack the [latest release][latest release].
 
-xValid requires Java version 11 or newer installed.
+xValid requires Java version 21 or newer installed.
 
 ## Usage
 
