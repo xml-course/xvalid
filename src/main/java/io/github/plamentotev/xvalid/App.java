@@ -40,7 +40,7 @@ public class App {
         var schema = ValidationUtils.initXmlSchema(schemaFile,
             schemaErrorHandler);
 
-        // If the schema contains errors there is no pint
+        // If the schema contains errors there is no point
         // trying to validate the document
         if (schemaErrorHandler.isErrorFound()) {
             System.out.println("The XML Schema contains errors. " +
