@@ -16,5 +16,6 @@ application {
 // is not a good idea but I didn't managed to find those artifacts
 // in a public Maven repository that is still maintained.
 dependencies {
+    // Xerces2 Java 2.12.2 (XML Schema 1.1)
     runtimeOnly(fileTree(mapOf("dir" to "libs",  "include" to "*.jar")))
 }
