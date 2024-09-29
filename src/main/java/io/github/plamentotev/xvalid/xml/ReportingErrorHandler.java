@@ -6,21 +6,19 @@ import org.xml.sax.SAXParseException;
 import java.io.PrintStream;
 import java.util.Objects;
 
-/**
- * A simple implementation of {@link ErrorHandler} that
- * reports all errors to given {@link PrintStream}.
- *
- * <p> A call to {@link #error(SAXParseException)} or
- * {@link #fatalError(SAXParseException)} will cause
- * {@link #isErrorFound()} to return {@code true}.
- * Calls to {@link #warning(SAXParseException)}
- * does not have effect on the {@link #isErrorFound()}
- * return value.
- *
- * <p> Unless otherwise noted, passing a {@code null}
- * argument to a constructor or method in this class
- * will cause a {@link NullPointerException} to be thrown.
- */
+/// A simple implementation of [ErrorHandler] that
+/// reports all errors to given [PrintStream].
+///
+/// A call to [#error(SAXParseException)] or
+/// [#fatalError(SAXParseException)] will cause
+/// [#isErrorFound()] to return `true`.
+/// Calls to [#warning(SAXParseException)]
+/// does not have effect on the [#isErrorFound()]
+/// return value.
+///
+/// Unless otherwise noted, passing a `null`
+/// argument to a constructor or method in this class
+/// will cause a [NullPointerException] to be thrown.
 public class ReportingErrorHandler implements ErrorHandler {
 
     private final PrintStream output;
@@ -29,14 +27,12 @@ public class ReportingErrorHandler implements ErrorHandler {
 
     private boolean errorFound = false;
 
-    /**
-     * Constructs new {@link ReportingErrorHandler} instance.
-     *
-     * @param output all errors and errors are going to be reported
-     *               to the provided {@link PrintStream}
-     * @param source the name of the source that is being processed.
-     *               It is used in the error messages
-     */
+    /// Constructs new [ReportingErrorHandler] instance.
+    ///
+    /// @param output all errors and errors are going to be reported
+    ///               to the provided [PrintStream]
+    /// @param source the name of the source that is being processed.
+    ///               It is used in the error messages
     public ReportingErrorHandler(PrintStream output, String source) {
         this.source = source;
         Objects.requireNonNull(output, "output must not be null");
@@ -44,12 +40,10 @@ public class ReportingErrorHandler implements ErrorHandler {
         this.output = output;
     }
 
-    /**
-     * Returns whether an error was reported to this handler.
-     *
-     * @return {@code true} if an error was reported,
-     *         {@code false} otherwise
-     */
+    /// Returns whether an error was reported to this handler.
+    ///
+    /// @return `true` if an error was reported,
+    ///         `false` otherwise
     public boolean isErrorFound() {
         return errorFound;
     }
